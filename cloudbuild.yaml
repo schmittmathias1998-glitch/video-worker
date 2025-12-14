@@ -1,0 +1,9 @@
+options:
+  logging: CLOUD_LOGGING_ONLY
+
+steps:
+  - name: gcr.io/k8s-skaffold/pack
+    args:
+      - build
+      - $PROJECT_ID/$REPO_NAME:$COMMIT_SHA
+      - --builder=gcr.io/buildpacks/builder:v1
